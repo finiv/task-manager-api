@@ -31,6 +31,6 @@ final class CurrentUserTaskExtension implements QueryCollectionExtensionInterfac
 
         $rootAlias = $queryBuilder->getRootAliases()[0];
         $queryBuilder->andWhere(sprintf('%s.owner = :current_user', $rootAlias))
-            ->setParameter('current_user', $user);
+            ->setParameter('current_user', $user->getId(), 'uuid');
     }
 }
