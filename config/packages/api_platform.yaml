@@ -1,0 +1,15 @@
+api_platform:
+    title: Task Manager API
+    description: A small per-user task manager, secured with JWT.
+    version: 1.0.0
+    enable_swagger_ui: true
+    defaults:
+        stateless: true
+        cache_headers:
+            vary: ['Content-Type', 'Authorization', 'Origin']
+    swagger:
+        persist_authorization: true
+        api_keys:
+            JWT:
+                name: Authorization
+                type: header
